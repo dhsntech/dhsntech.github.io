@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="shortcut icon" href="/logo_shiba.jpg" />
     <style>
         body {
@@ -14,28 +13,18 @@
             align-items: center;
             height: 100%;
             margin: 0;
-            background-color: #CECEFF;
+            background-color: #f4f4f4; /* 背景顏色 */
             text-align: center;
         }
         h1 {
             margin-top: 25px;
             color: #fff;
         }
-        h0 {
-            font-size: 2.0em;
-            margin-top: 20px;
-            color: #fff;
-        }
-        #result {
-            font-size: 2.0em;
-            margin-top: 3px;
-            color: #fff;
-        }
         .slideshow-container {
             width: 100%;
-            max-width: 400px; /* 控制最大寬度，根據需要調整 */
+            max-width: 400px;
             position: relative;
-            margin: 20px auto; /* 確保左右居中 */
+            margin: 20px auto;
         }
         .mySlides {
             display: none;
@@ -46,7 +35,7 @@
             max-height: 60vh;
             object-fit: cover;
             display: block;
-            margin: 0 auto; /* 確保圖片在其容器內居中 */
+            margin: 0 auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -80,15 +69,29 @@
             to {opacity: 1}
         }
     </style>
-    <script>
+</head>
+<body>
+    <div id="content">
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="/img/1.png" alt="Image">
+            </div>
+            <div class="mySlides">
+                <img src="/img/2.png" alt="Image">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
 
-        let slideIndex = 0;
+    <script>
+        let slideIndex = 1;  // 初始顯示第一張
         let slideInterval;
 
         function showSlides(n) {
             const slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
+            if (n > slides.length) { slideIndex = 1 } 
+            if (n < 1) { slideIndex = slides.length } 
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
@@ -106,31 +109,13 @@
         }
 
         function initSlides() {
-            showSlides(slideIndex = 1);
+            showSlides(slideIndex);  // 顯示第一張圖片
             slideInterval = setInterval(() => { plusSlides(1); }, 3000);
         }
 
         window.addEventListener("load", function() {
-            calculateDays();
-            initSlides();
+            initSlides();  // 加載時啟動輪播
         });
     </script>
-</head>
-<body>
-    <div id="content">
-        <audio src="/love_angela_date_calculation.htmllove_angela_date_calculation/Naughty%20Boy,%20Sam%20Smith%20-%20La%20la%20la%20(Lyrics)_256k.mp3" loop controls></audio>
-        <div class="slideshow-container">
-            <div class="mySlides">
-                <img src="/img/1.png" alt="Image">
-            </div>
-
-            <div class="mySlides">
-                <img src="/img/2.png" alt="Image">
-            </div>
-
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-    </div>
 </body>
 </html>
